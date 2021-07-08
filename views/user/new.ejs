@@ -1,0 +1,12 @@
+<div class="jumbotron">
+<form action="/user/create" method="POST">
+    <h2 class="form-signin-heading">Create an account</h2>
+    <input type="text" placeholder="User name" class="form-control" name="name"><br>
+    <input type="text" placeholder="Your title" class="form-control" name="title"><br>
+    <input type="text" placeholder="User Email" class="form-control" name="email"><br>
+    <input type="password" placeholder="Enter password" class="form-control" name="pasword"><br>
+    <input type="password" placeholder="password confirmation" class="form-control" name="confirmation"><br>
+    <button type="submit" class="btn btn-lg btn-primary btn-block">Create account</button>
+    <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+</form>
+</div>
