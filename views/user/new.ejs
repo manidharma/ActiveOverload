@@ -1,12 +1,20 @@
-<div class="jumbotron">
-<form action="/user/create" method="POST">
+<br><br><br><br>
+<form action="/user/create" method="POST" class="form_signin">
     <h2 class="form-signin-heading">Create an account</h2>
+    
+    <% if(flash && flash.err) { %>
+        <ul class="alert alert-success">
+            <% Object.keys(flash.err).forEach(function(error) { %>
+                <li> <%= JSON.stringify(flash.err[error]) %> </li>
+            <% }) %> 
+        </ul>
+    <% } %>
+
     <input type="text" placeholder="User name" class="form-control" name="name"><br>
     <input type="text" placeholder="Your title" class="form-control" name="title"><br>
     <input type="text" placeholder="User Email" class="form-control" name="email"><br>
-    <input type="password" placeholder="Enter password" class="form-control" name="pasword"><br>
+    <input type="password" placeholder="Enter password" class="form-control" name="password"><br>
     <input type="password" placeholder="password confirmation" class="form-control" name="confirmation"><br>
     <button type="submit" class="btn btn-lg btn-primary btn-block">Create account</button>
     <input type="hidden" name="_csrf" value="<%= _csrf %>" />
 </form>
-</div>

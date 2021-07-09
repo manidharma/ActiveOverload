@@ -16,6 +16,8 @@
  * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.policies.html
  */
 
+const flash = require("../api/policies/flash");
+
 
 module.exports.policies = {
 
@@ -26,7 +28,7 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
+  '*': 'flash',
 
   /***************************************************************************
   *                                                                          *
